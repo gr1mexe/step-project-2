@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'worker-1' }
+    agent { label 'docker' }
 
     environment {
         IMAGE_NAME = "yourdockerhub/step-project-2"
