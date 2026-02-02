@@ -6,12 +6,14 @@ variable "ami_id" {
 variable "instance_type" {
   type        = string
   description = "EC2 instance type (e.g., t3.micro)"
-  default     = "t3.micro"
+  default     = "c7i-flex.large"
 
   validation {
-    condition     = can(regex("^[a-z0-9]+\\.[a-z0-9]+$", var.instance_type))
-    error_message = "Invalid instance type format."
-  }
+  condition = can(
+    regex("^[a-z0-9-]+\\.[a-z0-9]+$", var.instance_type)
+  )
+  error_message = "Invalid instance type format."
+}
 }
 
 variable "aws_region" {

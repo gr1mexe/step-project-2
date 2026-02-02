@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node index.js",
-    "test": "npm test"
+    "test": "jest --ci"
   },
   "devDependencies": {
     "jest": "^29.0.0"
