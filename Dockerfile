@@ -7,4 +7,4 @@ RUN npm install
 
 COPY app .
 
-CMD ["npm", "test"]
+CMD ["node", "index.js"]

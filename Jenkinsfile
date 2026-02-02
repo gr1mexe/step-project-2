@@ -2,10 +2,11 @@ pipeline {
     agent { label 'docker' }
 
     environment {
-        IMAGE_NAME = "yourdockerhub/step-project-2"
+        IMAGE_NAME = "chornob/step-project-2"
     }
 
     stages {
+
         stage('Pull code') {
             steps {
                 checkout scm
@@ -20,7 +21,7 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                sh 'docker run --rm $IMAGE_NAME'
+                sh 'docker run --rm $IMAGE_NAME npm test'
             }
         }
 
