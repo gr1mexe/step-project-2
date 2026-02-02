@@ -8,6 +8,11 @@ resource "aws_instance" "jenkins_master" {
 
   user_data = file("${path.module}/user-data/jenkins-master.sh")
 
+  root_block_device {
+    volume_size = 20
+    volume_type = "gp3"
+  }
+
   tags = {
     Name = "jenkins-master"
   }
